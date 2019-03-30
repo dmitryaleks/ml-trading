@@ -23,8 +23,9 @@ ts = (data.to_frame('Original')
       .assign(Residual=components.resid))
 ```
 
-[Full code](models/ts-decomposition/ts-decompose.py)
+[Full code](models/ts-decomposition/ts_decompose.py)
 
 Decomposition result:
+
 ![Decomposition](models/ts-decomposition/img/ts-decomposition.png)
 

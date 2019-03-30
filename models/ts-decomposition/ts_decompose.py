@@ -20,5 +20,5 @@ ts = (industrial_production.to_frame('Original')
 
 fig = ts.plot(subplots=True, figsize=(14, 8))
 
-plt.show()
 plt.savefig('img/ts-decomposition.png')
+plt.show()
