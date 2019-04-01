@@ -52,3 +52,52 @@ A correlogram can be used to detect any autocorrelation after the removal of the
 The statistical properties, such as the mean, variance, or autocorrelation, of a stationary time series are independent of the period, that is, they don't change over time. Hence, stationarity implies that a time series does not have a trend or seasonal effects and that descriptive statistics such as the mean of the standard deviation, when computed for difference rolling windows, are constand or do not change much over time.
 
 Classical statistical models assume that the time series input data is stationary.
+
+### Achieve stationarity of Time Series with transformations
+
+  - application of the natural logarithm to convert an exponential growth pattern into a linear trend;
+  - deflation (de-trending): dividing a time series by another series that causes trending behavior;
+  - differencing: sutracting neighboring data points or values at seasonal lags from each other.
+
+### Random walk as a model for equity prices
+
+Random walk is an autoregressive stochastic process of the following form:
+
+```
+p(t) = p(t-1) + E(t) = Sum(E(i)) + p0
+```
+
+i.e. price at time t is a sum of all disturbances E(i) and the initial price (E.g. an IPO price).
+
+Such a time series could, over time, assume any variable. On the other hand, taking the first difference:
+
+```
+delta(p(t)) = p(t) - p(t-1)
+```
+
+leaves:
+
+```
+delta(p(t)) = E(t)
+```
+
+which is stationary.
+
+#### Diagnosing non-stationary time series
+
+Plot a correlogram and check whether there is a distinct maximum point on it that is greater than 0.5.
+
+Time series for stock prices are autocorrelated with lag one (are Lag-1 autocorrelated).
+Lag-1 autocorrelation of stock price tends to be higher than 0.5.
+
+
+#### Implications and properties
+
+Since it is enough to do a differencing once (the process is said to be "integrated of order one", a random walk of equity prices is therefore a unit-root non-stationary series.
+
+It has a "long memory": since current values are the sum of past disturbances, large innovations persist for much longer than for a mean-reverting, stationary series.
+
+### Unit root tests
+
+The augmented Dickey-Fuller (ADF) test evaluates the null hypothesis that a time series sample has unit root against the alternative of stationarity. It is available in the statsmodels Python package.
+
