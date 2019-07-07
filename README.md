@@ -101,7 +101,10 @@ It has a "long memory": since current values are the sum of past disturbances, l
 
 The augmented Dickey-Fuller (ADF) test evaluates the null hypothesis that a time series sample has unit root against the alternative of stationarity. It is available in the statsmodels Python package.
 
-## Return distribution and investment risk analysis
+## Log returns distribution and investment risk analysis
 
-[Full model](models/returns-distribution/stock-return-distribution.ipynb)
+[Log returns distribution and investmant risk analysis](models/returns-distribution/stock-return-distribution.ipynb)
 
+## Naive Bayes Classifier model
+
+[Naive Bayes Classifier model](models/naive-bayes/naive-bayes.ipynb)
