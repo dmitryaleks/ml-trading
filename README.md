@@ -108,3 +108,22 @@ The augmented Dickey-Fuller (ADF) test evaluates the null hypothesis that a time
 ## Naive Bayes Classifier model
 
 [Naive Bayes Classifier model](models/naive-bayes/naive-bayes.ipynb)
+
+## Sampling
+
+There are two ways to conduct sampling of a given population:
+
+  - Sampling without replacement: each time we select an item from a population, we remove it from the population (i.e. an item can be selected at most once);
+  - Sampling with replacement: each time we select an item from a population, we do not remove it from the population.
+
+In Pandas replacement is controlled by the 'replace' argument of the 'sample' method:
+
+```python
+data['price'].sample(42, replace=False)
+```
+
+### Sample Variance
+
+When calculating sample variance the degrees of freedom should be set to one to closer match the population variance. This effectively means that we are using (n - 1) as a denominator in the variance formula, where n is the size of the sample.
+
+Degrees of Freedom is the number of values in calculation that are free to variate.
