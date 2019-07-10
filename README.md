@@ -127,3 +127,25 @@ data['price'].sample(42, replace=False)
 When calculating sample variance the degrees of freedom should be set to one to closer match the population variance. This effectively means that we are using (n - 1) as a denominator in the variance formula, where n is the size of the sample.
 
 Degrees of Freedom is the number of values in calculation that are free to variate.
+
+### Sample statistics
+
+Distribution of a Sample Mean drawn from a population that follows the Normal Distribution with mean M and variance V also follows a normal distribution with mean M and variance V/n, where n is the sample size.
+
+#### Central Limit Theorem
+
+CLT suggests that even if the sample population is not normal, if sample size is large enough the distribution of sample mean is approximately normal with N(M, (sigma^2)/n), where n is the sample size.
+
+#### Confidence Interval
+
+Statistical inference is a method of building and validating hypothesis about random variable distribution based on samples.
+
+For example, a sample mean can give us an idea about population mean. Namely, by finding a sample mean we could assert that population mean lies within certain bounds around the sample mean.
+
+It is required to standardize the Sample Mean distribution (we are getting a Z-distribution):
+
+```
+Z = (x - M)/(sigma/sqrt(n))
+```
+
+We then find two central (2nd and 3rd) quantiles of a Z distribution that cover a required level of confidence, E.g. 95% of the distribution. Those quantiles have area of (1 - Alpha), while two other quantiles are of size Alpha/2 each.
