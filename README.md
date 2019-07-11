@@ -136,6 +136,8 @@ Distribution of a Sample Mean drawn from a population that follows the Normal Di
 
 CLT suggests that even if the sample population is not normal, if sample size is large enough the distribution of sample mean is approximately normal with N(M, (sigma^2)/n), where n is the sample size.
 
+[Central Limit Theorem](models/sample-variance/central-limit-theorem.ipynb)
+
 #### Confidence Interval
 
 Statistical inference is a method of building and validating hypothesis about random variable distribution based on samples.
