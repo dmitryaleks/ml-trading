@@ -140,9 +140,9 @@ CLT suggests that even if the sample population is not normal, if sample size is
 
 #### Confidence Interval
 
-Statistical inference is a method of building and validating hypothesis about random variable distribution based on samples.
+A Confidence Interval (CI) is a type of interval estimate, computed from the statistics of the observed data, that might contain the true value of an unknown population parameter. The interval has an associated confidence level that, loosely speaking, quantifies the level of confidence that the parameter lies in the interval.
 
-For example, a sample mean can give us an idea about population mean. Namely, by finding a sample mean we could assert that population mean lies within certain bounds around the sample mean.
+For example, a sample mean can give us an idea about the population mean. Namely, by finding a sample mean we could assert that population mean lies within certain bounds around the sample mean.
 
 It is required to standardize the Sample Mean distribution (we are getting a Z-distribution):
 
@@ -150,4 +150,7 @@ It is required to standardize the Sample Mean distribution (we are getting a Z-d
 Z = (x - M)/(sigma/sqrt(n))
 ```
 
-We then find two central (2nd and 3rd) quantiles of a Z distribution that cover a required level of confidence, E.g. 95% of the distribution. Those quantiles have area of (1 - Alpha), while two other quantiles are of size Alpha/2 each.
+We then find two central (2nd and 3rd) quantiles of a Z distribution that cover a required level of confidence, E.g. 95% of the distribution. Those quantiles have area of (1 - Alpha), while two other quantiles are of size Alpha/2 each. (1 - Alpha) being 95% of the total distribution gives us a 95% confidence interval.
+
+
+[Confidence Interval for Log returns of a stock](models/confidence-interval/confidence-interval-for-stock-returns.ipynb)
