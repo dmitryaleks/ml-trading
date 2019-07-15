@@ -132,13 +132,13 @@ Degrees of Freedom is the number of values in calculation that are free to varia
 
 Distribution of a Sample Mean drawn from a population that follows the Normal Distribution with mean M and variance V also follows a normal distribution with mean M and variance V/n, where n is the sample size.
 
-#### Central Limit Theorem
+## Central Limit Theorem
 
 CLT suggests that even if the sample population is not normal, if sample size is large enough the distribution of sample mean is approximately normal with N(M, (sigma^2)/n), where n is the sample size.
 
 [Central Limit Theorem](models/sample-variance/central-limit-theorem.ipynb)
 
-#### Confidence Interval
+## Confidence Interval
 
 A Confidence Interval (CI) is a type of interval estimate, computed from the statistics of the observed data, that might contain the true value of an unknown population parameter. The interval has an associated confidence level that, loosely speaking, quantifies the level of confidence that the parameter lies in the interval.
 
@@ -147,10 +147,45 @@ For example, a sample mean can give us an idea about the population mean. Namely
 It is required to standardize the Sample Mean distribution (we are getting a Z-distribution):
 
 ```
-Z = (x - M)/(sigma/sqrt(n))
+Z = (x - Mu)/(sigma/sqrt(n))
 ```
 
 We then find two central (2nd and 3rd) quantiles of a Z distribution that cover a required level of confidence, E.g. 95% of the distribution. Those quantiles have area of (1 - Alpha), while two other quantiles are of size Alpha/2 each. (1 - Alpha) being 95% of the total distribution gives us a 95% confidence interval.
 
 
 [Confidence Interval for Log returns of a stock](models/confidence-interval/confidence-interval-for-stock-returns.ipynb)
+
+## Hypothesis testing
+
+In statistics, hypothesis testing uses sample information to test validity of conjectures.
+
+We first set a hypothesis:
+
+  - H_zero: Null Hypothesis;
+  - H_a: Alternative Hypothesis.
+
+We can consider a t_distribution, which is of a form:
+
+```
+t = (x - Mu)/(s/sqrt(n)), where s is the standard deviation of the sample.
+```
+
+t distribution gets close to z distribution as the sample size gets larger, therefore:
+
+```
+z_hat = t = (x - Mu)/(s/sqrt(n))
+``` 
+
+We set a Rejection Region on z distribution based on the Level of Significance, E.g. alpha = 5%. The test can be Two Tails (with a symmetric rejection region) or One Tail (with a rejection region on only one side of z distribution).
+
+We calculate the value of z_hat statistics, E.g. if our null hypothesis is that the mean of population is zero, we calculate the value of z_hat, setting Mu to zero and obtain a single numberic value for z_hat.
+
+We then check with the rejection reason to see whether a given value of z_hat is expected only under rejection region (E.g. left or right 2.5% of the distribution).
+
+It is possible that null hypothesis is correct and we are making a type-one error (false positive), as we are rejecting a true null hypothesis and ending up claiming that our alternative hypothesis is true while it is not.
+
+## Distribution of a sum of multiple normal random variables
+
+Distribution of a sum of multiple normally distributed random variables is normal with Mean = N*Mean(v) and Variance = N*Variance(v), where N is the number of input random variables.
+
+[Distribution of a sum of normally distributed random variables](models/sum-of-random-variables/sum-of-random-variables.ipynb)
