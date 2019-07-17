@@ -184,6 +184,8 @@ We then check with the rejection reason to see whether a given value of z_hat is
 
 It is possible that null hypothesis is correct and we are making a type-one error (false positive), as we are rejecting a true null hypothesis and ending up claiming that our alternative hypothesis is true while it is not.
 
+[Hypothesis testing for average stock returns](models/hypothesis-testing/stock-return-hypothesis-testing.ipynb)
+
 ## Distribution of a sum of multiple normal random variables
 
 Distribution of a sum of multiple normally distributed random variables is normal with Mean = N*Mean(v) and Variance = N*Variance(v), where N is the number of input random variables.
