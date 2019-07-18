@@ -191,3 +191,22 @@ It is possible that null hypothesis is correct and we are making a type-one erro
 Distribution of a sum of multiple normally distributed random variables is normal with Mean = N*Mean(v) and Variance = N*Variance(v), where N is the number of input random variables.
 
 [Distribution of a sum of normally distributed random variables](models/sum-of-random-variables/sum-of-random-variables.ipynb)
+
+## Significance testing: p-value
+
+"Hypothetical frequency called the P-value, also known as the “observed significance level” for the test hypothesis.
+
+The distance between the data and the model prediction is measured using a test statistic (such as a t-statistic or a chi-squared statistic). The P-value is then the probability that the chosen test statistic would have been at least as large
+as its observed value if every model assumption were correct, including the test hypothesis. This definition embodies a crucial point lost in traditional definitions: In logical terms, the P-value tests all the assumptions about how the data were generated (the entire model), not just the targeted hypothesis it is supposed to test (such as a null hypothesis).
+
+The best way to build a good statistical model is by calculating confidence intervals and nowadays many journals requires confidence intervals."
+
+
+[Source: Towards Data Science](https://towardsdatascience.com/what-is-a-p-value-b9e6c207247f)
+
+[Reference: Greenland 2016: "Statistical tests, P values, confidence intervals, and power: a guide
+to misinterpretations"](papers/greenland2016-statistical-tests.pdf)
+
+![p-value and significance testng](img/p-value_in_statistical_significance_testing.png)
+
+[Example of p-value significance testing for a stock returns hypothesis](models/hypothesis-testing/stock-return-hypothesis-testing.ipynb)
