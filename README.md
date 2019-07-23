@@ -210,3 +210,16 @@ to misinterpretations"](papers/greenland2016-statistical-tests.pdf)
 ![p-value and significance testng](img/p-value_in_statistical_significance_testing.png)
 
 [Example of p-value significance testing for a stock returns hypothesis](models/hypothesis-testing/stock-return-hypothesis-testing.ipynb)
+
+## Z-distribution
+
+Z-distribution is the Standard Normal Distribution (SND).  The Standard Normal Distribution is a specific instance of the Normal Distribution that has a mean of ‘0’ and a standard deviation of ‘1’: N(0,1).
+
+Standardizing a given distribution to get an SND is a powerful technique that makes it easier to calculate probabilities for decision criteria when testing hypothesis.
+
+Standardization is done as follows:
+```
+Z = (X - M)/d
+```
+
+Z-tables for various p-Levels exist to assist manual to facilite Test of Significance.
