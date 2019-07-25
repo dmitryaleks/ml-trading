@@ -237,3 +237,53 @@ The normalized version of the covariance, the correlation coefficient, however, 
 ```
 corr(X,Y) = cov(X,Y)/(Sigma_X * Sigma_Y)
 ```
+
+## Linear Regression model
+
+Models a relation between predictors and response:
+
+```
+y = f(x_1, x_2, ..., x_n) = beta_0 + beta_1 * x_1 + ... + beta_n * x_n
+```
+
+### Simple Linear Regression (single predictor)
+
+Population model:
+```
+y_i = beta_0 + beta_1 * x_i + e_i,
+
+where:
+
+residual error e_i ~ N(0, sigma^2)
+beta_0: y-intercept;
+beta_1: coefficient of slope.
+```
+
+
+We use sample to estmate beta_0, beta_1 and sigma.
+
+Mean equasion:
+```
+Mu(y)|x_i = beta_0 + beta_1 * x_i
+```
+
+Assumptions:
+
+  - linearity (the mean of response is linearly determined by predictors);
+  - independence (with different x_i responses are independent);
+  - normality (residual noise and reponse follow normal distribution).
+  - equal variance (variance is equal b/w responses).
+
+#### Model fitting
+
+We use the orinary least square estimation to find the best values beta_0 and beta_1 that would describe the data the best.
+
+#### Model evaluation
+
+Calculate metrics:
+
+  - significance of beta_1 term: calculate a p-value for a null hypothesis of "beta_1 is zero" and decide whether null hypothesis can be rejected;
+  - calculate confidence interval for beta_1;
+  - calculate R-sqared metric: coeffcicient of determination. Measures the ratio of explained variance with regard to the total variance.
+
+Note: "statsmodels.regression.linear_model.ols" does such evaluation (model.summary()).
