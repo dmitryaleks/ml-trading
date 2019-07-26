@@ -278,6 +278,8 @@ Assumptions:
 
 We use the orinary least square estimation to find the best values beta_0 and beta_1 that would describe the data the best.
 
+[Fitting a Linear Regression Model to data](models/regression-model/linear-regression.ipynb)
+
 #### Model evaluation
 
 Calculate metrics:
