@@ -289,3 +289,17 @@ Calculate metrics:
   - calculate R-sqared metric: coeffcicient of determination. Measures the ratio of explained variance with regard to the total variance.
 
 Note: "statsmodels.regression.linear_model.ols" does such evaluation (model.summary()).
+
+#### Model diagnostic
+
+In statistics, a Q–Q (quantile-quantile) plot is a probability plot, which is a graphical method for comparing two probability distributions by plotting their quantiles against each other. First, the set of intervals for the quantiles is chosen. A point (x, y) on the plot corresponds to one of the quantiles of the second distribution (y-coordinate) plotted against the same quantile of the first distribution (x-coordinate). Thus the line is a parametric curve with the parameter which is the number of the interval for the quantile.
+
+If the two distributions being compared are similar, the points in the Q–Q plot will approximately lie on the line y = x.
+
+The process of building a Q-Q plot is as follows:
+
+  - assign a quantile to each data point in the sample;
+  - divide the reference normal distribution into an equal number of eqally sized quntiles;
+  - plot (x, y) points on the chart, where x is the quantile value from the reference normal distribution and y is the alue from the sample.
+
+![Q-Q Plot](img/q-q-plot.png)
