@@ -303,3 +303,11 @@ The process of building a Q-Q plot is as follows:
   - plot (x, y) points on the chart, where x is the quantile value from the reference normal distribution and y is the alue from the sample.
 
 ![Q-Q Plot](img/q-q-plot.png)
+
+### Multiple linear regression model
+
+It is natural to have more than one predictor to predict a response. In such a case the response is determined by multifactors:
+
+```
+y = f(x_1, x_2, ..., x_n) = beta_0 + beta_1 * x_1 + ... + beta_n * x_n
+```
