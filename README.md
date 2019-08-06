@@ -311,3 +311,34 @@ It is natural to have more than one predictor to predict a response. In such a c
 ```
 y = f(x_1, x_2, ..., x_n) = beta_0 + beta_1 * x_1 + ... + beta_n * x_n
 ```
+
+#### F-test of significance
+
+The F-test of the overall significance is a specific form of the F-test. It compares a model with no predictors to the model that you specify. A regression model that contains no predictors is also known as an intercept-only model.
+
+The hypotheses for the F-test of the overall significance are as follows:
+
+  - Null hypothesis: The fit of the intercept-only model and your model are equal;
+  - Alternative hypothesis: The fit of the intercept-only model is significantly reduced compared to your model.
+
+If the P value for the F-test of overall significance test is less than your significance level, you can reject the null-hypothesis and conclude that your model provides a better fit than the intercept-only model.
+
+#### Multicollineatiry
+
+Multicollinearity refers to a situation in which two or more explanatory variables in a multiple regression model are highly linearly related. In this situation the coefficient estimates of the multiple regression may change erratically in response to small changes in the model or the data. Multicollinearity does not reduce the predictive power or reliability of the model as a whole, at least within the sample data set; it only affects calculations regarding individual predictors. That is, a multivariate regression model with collinear predictors can indicate how well the entire bundle of predictors predicts the outcome variable, but it may not give valid results about any individual predictor, or about which predictors are redundant with respect to others.
+
+#### Model evaluation
+
+RMSE:
+
+```
+RMSE = sqrt(SUM(err^2)/(n - k - 1))
+```
+
+where k is the number of predictors.
+
+Adjusted R^2:
+
+```
+R^2_adjusted = 1 - (1 - R^2)(n - 1)/(n - k - 1)
+```
