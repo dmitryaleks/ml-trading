@@ -342,3 +342,33 @@ Adjusted R^2:
 ```
 R^2_adjusted = 1 - (1 - R^2)(n - 1)/(n - k - 1)
 ```
+
+##### Sharpe Ratio
+
+Measures the excess return (or risk premium) per unit of deviation in an investment asset or a trading strategy, typically referred to as risk.
+
+Excess returns are the return earned by a stock (or portfolio of stocks) and the risk free rate, which is usually estimated using the most recent short-term government treasury bill. For example, if a stock earns 15% in a year when the U.S. treasury bill earned 3%, the excess returns on the stock were 15%-3% = 12%.
+
+Daily Sharpe ration is calculated as follows:
+
+```
+SR_daily = Mean(Return_a - Return_b)/Sqrt(Variance(Return_a - Return_b))
+```
+
+While the yearly Sharpe ratio is:
+
+```
+SR_yearly = Sqrt(252)*SR_daily
+```
+
+##### Maximum drawdown
+
+Maximum drawdown is the maximum percentage decline in the strategy from the historical peak profit at each point in time.
+
+At each point in time drawdown is calculated as follows:
+
+```
+drawdown = (maximum_wealth_by_this_time - current_wealth)/maximum_wealth_by_this_time
+```
+
+We then simply take a maximum of this value during model evaluation.
