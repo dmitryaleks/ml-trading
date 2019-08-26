@@ -280,6 +280,53 @@ We use the orinary least square estimation to find the best values beta_0 and be
 
 [Fitting a Linear Regression Model to data](models/regression-model/linear-regression.ipynb)
 
+##### Ordinary Least Squares (OLS)
+
+Residual: the difference between the model's prediction and the actual outcome for a given data point;
+Error: the deviation of the true model from the true output in the population.
+
+Least square estimation method chooses the coefficent vector to minimise the Residual Sum of Squares (RSS):
+
+```
+argmin(beta) = RSS
+```
+
+Optimal parameters vector that minimises RSS can be found on the training set as follows:
+
+```
+beta = (1/(X_transposed * X)) * (X_transposed * y)
+```
+
+##### Maximum Likelihood Estimation (MLE)
+
+MLE estimates the parameters of a statistical model. It relies on the likelihood function that computes how likely it is to observe the sample of output values for a given set of input data as a function of the model paramteres. Likelihood differs from probabilities in that it is not normalized to range [0,1].
+
+E.g. for the linear regression we can set up the likeliood function by assuming a distribution for the error term, such as the standard normal distribution:
+
+```
+e(i) ~ N(0,1)
+```
+
+This allows us to compute the conditional probability of observing a given output y(i) given the corresponding input vector x(i) and the parameters:
+
+```
+p(y(i)|x(i), beta) = (1/sigma*sqrt(2*Pi))*exp(-(e(i)^2)/(2*sigma)) = (1/sigma*sqrt(2*Pi))*exp(-((y(i) - x(i)*beta)^2)/(2*sigma))
+```
+
+Assuming the output values are conditionally independent given the inputs, the likelihood of the sample is proportional to the product of the conditional probabilities of the individual output data points. Since it is easier to work with sums than with products, we apply the logarithm to obtain the log-likelihood function:
+
+```
+log_L(y,x,beta) = sum(log(1/(sigma*sqrt(2*Pi))*exp(-((y(i) - x(i)*beta)^2)/(2*sigma))))
+```
+
+The goal of MLE is to maximize the likelihood of the output sample that has in fact been observed by choosing model parameters, taking the observed inputs as given. Hence the MLE parameter estimate results from maximising the log-likelihood function:
+
+```
+beta_mle = argmax(beta | log_L)
+```
+
+Due to the assumption of normal distribution, maximizing the log-likelihood function produces the same parameter solution as least squares because the only expression that depends on the parameters (beta) is squared residual in the exponent. For other distributional assumptions and models, MLE will produce different results, and in many cases, least squares is not applicable.
+
 #### Model evaluation
 
 Calculate metrics:
