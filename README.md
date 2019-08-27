@@ -297,6 +297,16 @@ Optimal parameters vector that minimises RSS can be found on the training set as
 beta = (1/(X_transposed * X)) * (X_transposed * y)
 ```
 
+##### The Gauss-Markov theorem
+
+GMT defines the assumptions required for OLS to produce unbiased estimates of the model parameters:
+
+  - in the population, linearity holds;
+  - input data are a random sample from the population;
+  - no perfect collinearity - thre are no exact linear relationships among the input variables;
+  - the error has a conditional mean of zero given any of the inputs;
+  - homaskedasticity: the error term 'e' has constant variance given the inputs.
+
 ##### Maximum Likelihood Estimation (MLE)
 
 MLE estimates the parameters of a statistical model. It relies on the likelihood function that computes how likely it is to observe the sample of output values for a given set of input data as a function of the model paramteres. Likelihood differs from probabilities in that it is not normalized to range [0,1].
@@ -419,3 +429,53 @@ drawdown = (maximum_wealth_by_this_time - current_wealth)/maximum_wealth_by_this
 ```
 
 We then simply take a maximum of this value during model evaluation.
+
+#### In-sample Goodness of fit measures
+
+These measures help to asses the quality of model specification to select among different model designs.
+
+Below are the in-sample measures.
+
+##### R squared
+
+R^2 measures the share of the variation in the outcome data explained by the model ans is computed as:
+
+```
+R^2 = 1 - RSS/TSS,
+
+where:
+
+RSS - the sum of squared residualts,
+TSS - the sum of squared deviations of the outcome from its mean.
+```
+
+##### Adjusted R squared
+
+The adjusted R^2 penalises R^2 for adding more variables, each additional variable needs to reduce RSS significantly to produce better goodness of fit.
+
+##### Akaike Information Criterion (AIC)
+
+Conceptually, AIC aims at finding the model that best describes an unknown data-generating process. AIC is to be maximized and is based on the maximum-likelihood estimate:
+
+```
+AIC = -2*log(L) + 2*k,
+
+where:
+
+L: the value fo the maximized likelihood;
+k: number of model parameters.
+```
+
+##### Bayesian Information Criterion (BIC)
+
+BIC imposes a higher penalty and might underfit comparatively to AIC, as it has a sample size as part of its terms. BIC tries to find the best model among the set of candidates:
+
+```
+BIC = -2*log(L) + log(N)*k,
+
+where:
+
+L: the value fo the maximized likelihood;
+k: number of model parameters;
+N: sample size.
+```
