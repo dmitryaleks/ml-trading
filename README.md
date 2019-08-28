@@ -479,3 +479,27 @@ L: the value fo the maximized likelihood;
 k: number of model parameters;
 N: sample size.
 ```
+
+#### Heteroskedasticity
+
+Heteroskedasticity occurs when the residual variance is not constant but differs across observations. If the residual variance is positively correlated with an input variable, that is, when errors are larger for input values that are far from their mean, then Ordinary Least Squares standard error estimates will be too low, and, consequently, te t-statistic will be inflated leading to false discoveries of relationship where none actually exist.
+
+Diagnostic includes visual inspection of the residuals: systematic patterns in the (supposedly random) residuals suggest statistical tests of the null hypothesis that errors are homoscedastic against various alternatives.
+
+Heteroskedasticity tests: Breusch-Pagan and White tests.
+
+Robust standard errors (sometimes called white standard errors) take heteroskedasticity into account when computing the error variance using a so-called 'sandwich estimator'.
+
+#### Serial correlation
+
+Serial correlation means that consecutive residuals produced by linear regression are correlated, which violates one of the Gauss-Markov Theorem's assumptions. Positive serial correlation implies that the standard errors are underestimated and the t-statistics will be inflated, leading to false discoveries if ignored.
+
+The Durbin-Watson statistic diagnoses serial correlation. It tests the hypothesis that the OLS residuals are not autocorrelated against the alternative that they follow an autoregressive precess. The test statistic ranges from 0 to 4, and values near 2 indicate non-autocorrelation, lower values suggest positive, and higher values indicate negative autocorrelation. The exact threshold values depend on the number of parameters and observations.
+
+#### Multicollinearity
+
+Multicollinearity occurs when two or more independent variables are highly correlated.
+
+It makes it difficult to determine which factor influence the dependent variable.
+
+There is no formal or theory-based solution that corrects for multicollinearity. Instead, try to remve one or more of the correlated input variables, or increase the sample size.
