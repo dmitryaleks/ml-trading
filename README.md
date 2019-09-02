@@ -503,3 +503,23 @@ Multicollinearity occurs when two or more independent variables are highly corre
 It makes it difficult to determine which factor influence the dependent variable.
 
 There is no formal or theory-based solution that corrects for multicollinearity. Instead, try to remve one or more of the correlated input variables, or increase the sample size.
+
+### Stationarity and unit roots
+
+Finding unit roots of a characteristic equasion of the process is required to deterime the order of integration of the pricess (I in ARIMA).
+
+If the maximum value of the unit root is one - the first difference of the process will be stationary.
+
+The defining characteristic of a unit-root non-stationary series is long memory: since curent values are the sum of past distrurbances, large innovations persist for much longer than for a mean-reverting, stationary series.
+
+#### Unit root tests
+
+Statistical unit root tests are a common way to determine objectively whether (additional) differencing is necessary.
+
+The Augmented Dickey-Fuller (ADF) test evaluates the null hypothesis that a time series sample has unit root against the alternative of stationarity.
+
+The ADF test statistics uses the sample coefficient Gamma, that, under the null hypothesis of unit-root non-stationarity equals zero, and is negative otherwise.
+
+Python's statsmodels implements ADF as 'adfuller' under TSA package:
+
+[statsmodels ADF](https://www.statsmodels.org/stable/generated/statsmodels.tsa.stattools.adfuller.html)
